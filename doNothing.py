@@ -19,7 +19,13 @@ if __name__ == "__main__":
                       "selectV", "moveV", "resetV"}
     #Make sure to have data handling action-message at end of string
     #For multiple action-messages use ";" seperator and have " 0" for previous action-message
-    transitions = {(0,"clickRecenterButton",1,"showCP"), (1,"click",0,"hideCP"), (1,"clickRecenterButton",0,"hideCP"), (1,"clickOnCanvas",0,"hideCP 0;moveC")}
+    transitions = {(1,"clickRecenterButton",2,"showCP"), (1, "clickTriChooseButton", 3, "showTP"), (1, "mouseDownVertex", 4, "selectV"), 
+                   (2,"click",1,"hideCP"), (2,"clickRecenterButton",1,"hideCP"), (2,"clickOnCanvas",1,"hideCP 0;moveC"), (2, "recenterTextChange", 5, "checkCT"), (2, "clickTriChooseButton", 3, "hideCP 0; chooseTP"),
+                   (3, "clickRecenterButton", 2, "hideTP 0; showCP"), (3, "clickTriChooseButton", 1, "showTP"), (3, "click", 1, "hideTP 0; resetT"),
+                   (4, "mouseMove", 4, "moveV"), (4, "moveLeaveCanvas", 1, "resetV"), (4, "mouseUpCanvas", 1, "moveV")
+                   
+
+                   }
     S = 0
     T = Q, inputAlphabet, outputAlphabet, transitions, S
     transducer = Transducer(T)
