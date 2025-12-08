@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
         
         response = "noop 0"
-        response = transducer.step(msg)
+        #response = transducer.step(msg)
         #match msg:
             #case 'mouseDownVertex':
                 #response = "showCP " + data
