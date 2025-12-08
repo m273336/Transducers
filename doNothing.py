@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import sys
+from Transducer import *
 
 if __name__ == "__main__":
     frgui = open("fromGUI","r")
@@ -27,18 +28,8 @@ if __name__ == "__main__":
         # - if you click on a vertex, the "Recentering Pane" will appear,
         #   and when you leave the "canvas", it disappears.  See why?
 
-        
-        response = "noop 0"
-        #response = transducer.step(msg)
-        #match msg:
-            #case 'mouseDownVertex':
-                #response = "showCP " + data
-            #case 'mouseLeaveCanvas':
-                #response = "hideCP " + data
-            #case _:
-                #print(f'No handler for: {msg}',file=sys.stderr)
-            
-        
+        response = transducer.step(msg)
+                
         # Respond to GUI - flush to send line immediately!
         print(response + "\n",file=togui,flush=True)
         print(f'Sent({count}): {response}',file=sys.stderr) #4DEBUG!
