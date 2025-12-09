@@ -13,7 +13,9 @@ class Transducer:
         try:
             q,y = self.Tmap[(self.curr,w)]
             self.curr = q
+            #print(q)
             return y
             
         except KeyError:
+            #print(self.curr)
             return "noop"

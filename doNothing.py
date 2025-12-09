@@ -20,11 +20,11 @@ if __name__ == "__main__":
     #Make sure to have data handling action-message at end of string
     #For multiple action-messages use ";" seperator and have " 0" for previous action-message
     transitions = { (0, "documentReady", 1, "move <0, -1.33>; resetT"),
-        (1,"clickRecenterButton",2,"showCP"), (1, "clickTriChooseButton", 3, "showTP"), (1, "mouseDownVertex", 4, "selectV"), 
-                   (2,"click",1,"hideCP"), (2,"clickRecenterButton",1,"hideCP"), (2,"clickOnCanvas",1,"hideCP 0;moveC"), (2, "recenterTextChange", 5, "checkCT"), (2, "clickTriChooseButton", 3, "hideCP 0; chooseTP"),
-                   (3, "clickRecenterButton", 2, "hideTP 0; showCP"), (3, "clickTriChooseButton", 1, "showTP"), (3, "click", 1, "hideTP 0; resetT"), (3, "mouseDownVertex", 4, "hideTP 0; selectV"),
-                   (4, "mouseMove", 4, "moveV"), (4, "moveLeaveCanvas", 1, "resetV"), (4, "mouseUpCanvas", 1, "moveV"),
-                   (5, "recenterTextSucc", 1, "hideCP 0; moveCP"), (5, "recenterTextFail", 5, "errorCT")
+                    (1,"clickRecenterButton",2,"showCP"), (1, "clickTriChooseButton", 3, "showTP"), (1, "mouseDownVertex", 4, "selectV"), 
+                    (2,"click",1,"hideCP"), (2,"clickRecenterButton",1,"hideCP"), (2,"clickOnCanvas",1,"hideCP 0;moveC"), (2, "recenterTextChange", 5, "checkCT"),(2, "clickTriChooseButton", 3, "hideCP 0;showTP"),
+                    (3, "clickRecenterButton", 2, "hideTP 0;showCP"), (3, "clickTriChooseButton", 1, "hideTP"), (3, "click", 1, "hideTP 0;resetT"), (3, "mouseDownVertex", 4, "hideTP 0;selectV"), (3, "clickTriTypeChoice", 1, "hideTP 0;resetT"),
+                    (4, "mouseMove", 4, "moveV"), (4, "moveLeaveCanvas", 1, "resetV"), (4, "mouseUpCanvas", 1, "moveV"),
+                    (5, "recenterTextSucc", 1, "hideCP 0;moveC"), (5, "recenterTextFail", 2, "errorCT")
                    
 
                    }
