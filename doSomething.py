@@ -5,7 +5,7 @@ from Transducer import *
 if __name__ == "__main__":
     frgui = open("fromGUI","r")
     togui = open("toGUI","w")
-    count = 0 #For debug
+    #count = 0 #For debug
 
     #Dont include data
     Q = {0, 1, 2, 3, 4}
@@ -43,8 +43,8 @@ if __name__ == "__main__":
             msg,data = frgui.readline().split(maxsplit=1)
         except:
             break
-        count += 1 #For debug
-        print(f'Read({count}): {msg} {data}',file=sys.stderr) #3DEBUG!
+        #count += 1 #For debug
+        #print(f'Read({count}): {msg} {data}',file=sys.stderr) #3DEBUG!
 
         #Takes input string and steps through transducer to get output as well as put in it new state
         #Data is append on seperatly based on the format of the transitions
@@ -67,5 +67,5 @@ if __name__ == "__main__":
         for res in actionList:
             # Respond to GUI - flush to send line immediately!
             print(res + "\n",file=togui,flush=True)
-            print(f'Sent({count}): {res}',file=sys.stderr) #3DEBUG!
+            #print(f'Sent({count}): {res}',file=sys.stderr) #3DEBUG!
 
